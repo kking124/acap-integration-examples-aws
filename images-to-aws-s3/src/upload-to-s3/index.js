@@ -28,7 +28,7 @@ const getHandler = async () => {
 
 const postHandler = async (event) => {
   const contentType = event.headers["content-type"];
-  if (!contentType || !contentType.startsWith("image/")) {
+  if (!contentType || !contentType.startsWith("text/")) {
     return response.UnsupportedMediaType;
   }
 
