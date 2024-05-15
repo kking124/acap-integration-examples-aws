@@ -20,7 +20,7 @@ const secrets = require("./secrets");
 
 const handler = async (event) => {
   const accessToken = await secrets.getAccessToken();
-  const isAuthorized = event.queryStringParameters?.accessToken === accessToken;
+  const isAuthorized = event.headers?.authorization === `Bearer ${accessToken}`;
 
   return {
     isAuthorized,
